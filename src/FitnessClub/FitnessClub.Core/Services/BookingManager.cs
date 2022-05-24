@@ -19,11 +19,11 @@ namespace FitnessClub.Core
 
         public bool CreateBooking(Booking booking)
         {
-            int roomId = FindAvailableGym(booking.StartDate, booking.EndDate);
+            int gymId = FindAvailableGym(booking.StartDate, booking.EndDate);
 
-            if (roomId >= 0)
+            if (gymId >= 0)
             {
-                booking.RoomId = roomId;
+                booking.GymId = gymId;
                 booking.IsActive = true;
                 bookingRepository.Add(booking);
                 return true;
@@ -42,7 +42,7 @@ namespace FitnessClub.Core
             var activeBookings = bookingRepository.GetAll().Where(b => b.IsActive);
             foreach (var room in roomRepository.GetAll())
             {
-                var activeBookingsForCurrentRoom = activeBookings.Where(b => b.RoomId == room.Id);
+                var activeBookingsForCurrentRoom = activeBookings.Where(b => b.GymId == room.Id);
                 if (activeBookingsForCurrentRoom.All(b => startDate < b.StartDate &&
                     endDate < b.StartDate || startDate > b.EndDate && endDate > b.EndDate))
                 {

@@ -31,6 +31,7 @@ namespace FitnessClub.Mvc
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
             services.AddDbContext<FitnessClubContext>(opt => opt.UseSqlite("Data Source=app.db"));
+            //services.AddDbContext<HotelBookingContext>(opt => opt.UseSqlserver("Data Source=app.db"));
             
             services.AddScoped<IRepository<Gym>, GymRepository>();
             services.AddScoped<IRepository<Customer>, CustomerRepository>();
@@ -75,7 +76,7 @@ namespace FitnessClub.Mvc
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Bookings}/{action=Index}/{id?}");
             });
         }
     }

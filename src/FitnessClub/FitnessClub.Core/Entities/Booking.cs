@@ -9,7 +9,7 @@ namespace FitnessClub.Core
         public DateTime EndDate { get; set; }
         public bool IsActive { get; set; }
         public int CustomerId { get; set; }
-        public int RoomId { get; set; }
+        public int GymId { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual Gym Gym { get; set; }
     }
