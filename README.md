@@ -14,5 +14,7 @@
 ### Use-case диаграмма
 ![UserCases](./lab1/ob.png)
 
+![Userbb](./lab1/bb.png)
+
 ### ER-диаграмма сущностей
 ![ER](./lab1/us.png)
