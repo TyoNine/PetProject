@@ -12,7 +12,7 @@
 Есть пользователи: Администратор и клиенты.
 
 ### Use-case диаграмма
-![UserCases](./lab1/as.png)
+![UserCases](./lab1/obn.png)
 
 ### ER-диаграмма сущностей
 ![ER](./lab1/us.png)
